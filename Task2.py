@@ -13,11 +13,12 @@ def get_numbers_ticket(min:int, max:int, quantity:int) -> list:
     :return: Returns a list of randomly selected numbers
     :rtype: list
     """
-    if min >= 1 and max <= 1000 and min < quantity < max:
+    if min >= 1 and max <= 1000 and max - min >= quantity:
         result = set()
         while len(result) <= quantity-1:
             result.add(randint(min, max))
         return sorted(list(result))
     else: return []
 
-print(get_numbers_ticket(1,49,5))
+print(get_numbers_ticket(1,59,5))
+print(get_numbers_ticket(1,4,3))
